@@ -11,24 +11,26 @@
             color: #e0e0e0;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 50px 20px;
+            text-align: center;
         }
 
         h1 {
             font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .intro {
             font-size: 1.2em;
-            text-align: center;
             margin-bottom: 40px;
+            animation: slideIn 1.5s ease-in-out;
         }
 
         .section {
@@ -37,6 +39,7 @@
             background-color: #1e1e1e;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            animation: fadeInUp 1.5s ease-in-out;
         }
 
         h2 {
@@ -54,6 +57,21 @@
             padding: 20px 0;
             background-color: #111;
             color: #aaa;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
