@@ -7,52 +7,51 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
+            background-color: #0d0d0d;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            background: #1f1f1f;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 40px 20px;
+            background: #1c1c1c;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
         h1 {
-            font-size: 3.5em;
-            margin-bottom: 30px;
+            font-size: 3.2em;
+            margin-bottom: 20px;
             color: #ff6347;
-            letter-spacing: 2px;
-            text-align: center;
             text-transform: uppercase;
-            border-bottom: 2px solid #ff6347;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #ff6347;
             display: inline-block;
             padding-bottom: 10px;
-            animation: fadeIn 1.5s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         .intro {
             font-size: 1.3em;
             margin-bottom: 40px;
-            color: #cccccc;
-            text-align: center;
-            line-height: 1.6;
-            animation: fadeIn 1.8s ease-in-out;
+            color: #d1d1d1;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .section {
-            margin-bottom: 60px;
-            padding: 40px;
-            background: #2a2a2a;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #262626;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(40px);
             opacity: 0;
-            transform: translateY(50px);
             transition: transform 0.5s, opacity 0.5s;
         }
 
@@ -62,13 +61,15 @@
         }
 
         h2 {
-            font-size: 2.2em;
+            font-size: 2em;
             margin-bottom: 20px;
             color: #ff6347;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             border-bottom: 2px solid #ff6347;
             display: inline-block;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
         }
 
         .gallery, .roles, .friends {
@@ -79,16 +80,16 @@
         }
 
         .gallery img {
-            width: 260px;
-            height: 180px;
-            border-radius: 12px;
+            width: 250px;
+            height: 160px;
+            border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
             transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
         }
 
         .gallery img:hover {
             transform: scale(1.08);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
         .role, .friend {
@@ -108,17 +109,17 @@
 
         footer {
             text-align: center;
-            padding: 40px 0;
-            background-color: #0c0c0c;
+            padding: 30px 0;
+            background-color: #0b0b0b;
             color: #bbbbbb;
-            margin-top: 60px;
+            margin-top: 50px;
             border-top: 1px solid #333;
             box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
         }
 
         footer p {
             margin: 0;
-            font-size: 1.1em;
+            font-size: 1em;
             letter-spacing: 1.2px;
         }
 
@@ -138,7 +139,7 @@
 
     <div class="container">
         <h1>About Alex</h1>
-        <div class="intro">Creative programmer with expertise in Python, JavaScript, C#, and more. Passionate about crafting efficient and impactful solutions.</div>
+        <div class="intro">Programmer with experience in Python, JavaScript, C#, Lua, C++, and C#. I am a 3-year coder if you didn't know.</div>
         
         <div class="section">
             <h2>Past Work</h2>
@@ -171,26 +172,26 @@
         <div class="section">
             <h2>Here are my friends</h2>
             <div class="friends">
-                <div class="friend">staray</div>
-                <div class="friend">aj</div>
-                <div class="friend">ancient</div>
-                <div class="friend">neprix</div>
-                <div class="friend">bren</div>
-                <div class="friend">kyrusworld</div>
+                <div class="friend">Staray</div>
+                <div class="friend">AJ</div>
+                <div class="friend">Ancient</div>
+                <div class="friend">Neprix</div>
+                <div class="friend">Bren</div>
+                <div class="friend">Kyrusworld</div>
                 <div class="friend">Isb</div>
-                <div class="friend">brenn</div>
-                <div class="friend">trance</div>
-                <div class="friend">kyoko/zuly</div>
-                <div class="friend">mar</div>
-                <div class="friend">intrns</div>
-                <div class="friend">movelook</div>
+                <div class="friend">Brenn</div>
+                <div class="friend">Trance</div>
+                <div class="friend">Kyoko/Zuly</div>
+                <div class="friend">Mar</div>
+                <div class="friend">Intrns</div>
+                <div class="friend">Movelook</div>
             </div>
             <p style="color: #ff6347; margin-top: 20px;">More will be added soon but for now this is half of my friends online and IRL.</p>
         </div>
 
         <div class="section">
             <h2>Why I Code</h2>
-            <p>Coding is not just my job, but my passion. It allows me to solve problems and build solutions that make a difference. Whether it's a complex algorithm or a simple script, I strive to create something impactful.</p>
+            <p>I code whenever I am bored, or I just feel like it. Coding is my way to make sure I'm never bored—if you know what I mean. Coding can be pretty easy, but it can be hard to start off with.</p>
         </div>
     </div>
 
