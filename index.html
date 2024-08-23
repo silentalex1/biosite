@@ -19,52 +19,60 @@
             max-width: 1000px;
             margin: 50px auto;
             padding: 40px 20px;
+            background: #1c1c1c;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
 
-        .profile {
-            margin-bottom: 30px;
-        }
-
-        .profile img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
         h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: 3.2em;
+            margin-bottom: 20px;
             color: #ff6347;
             text-transform: uppercase;
             letter-spacing: 2px;
+            border-bottom: 3px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 10px;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         .intro {
             font-size: 1.3em;
             margin-bottom: 40px;
             color: #d1d1d1;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .section {
             margin-bottom: 50px;
             padding: 30px;
-            background: #1c1c1c;
+            background: #262626;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(40px);
+            opacity: 0;
             transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h2 {
             font-size: 2em;
             margin-bottom: 20px;
             color: #ff6347;
+            text-align: center;
             text-transform: uppercase;
             letter-spacing: 1.5px;
+            border-bottom: 2px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .gallery {
+        .gallery, .roles, .friends {
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -72,8 +80,8 @@
         }
 
         .gallery img {
-            width: 220px;
-            height: 140px;
+            width: 250px;
+            height: 160px;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
             transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
@@ -84,14 +92,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .roles {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .role {
+        .role, .friend {
             background-color: #333;
             padding: 15px 25px;
             border-radius: 8px;
@@ -101,7 +102,7 @@
             transition: background-color 0.4s, transform 0.4s;
         }
 
-        .role:hover {
+        .role:hover, .friend:hover {
             background-color: #ff6347;
             transform: scale(1.08);
         }
@@ -121,16 +122,24 @@
             font-size: 1em;
             letter-spacing: 1.2px;
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="profile">
-            <img src="profile.jpg" alt="Profile Picture">
-        </div>
         <h1>About Alex</h1>
-        <div class="intro">Programmer with experience in Python, JavaScript, C#, Lua, C++, and more.</div>
+        <div class="intro">Programmer with experience in Python, JavaScript, C#, Lua, C++, and C#. I am a 3-year coder if you didn't know.</div>
         
         <div class="section">
             <h2>Past Work</h2>
@@ -160,11 +169,48 @@
             </div>
         </div>
 
-        <footer>
-            <p>&copy; 2024 Alex. All rights reserved.</p>
-        </footer>
+        <div class="section">
+            <h2>Here are my friends</h2>
+            <div class="friends">
+                <div class="friend">Staray</div>
+                <div class="friend">AJ</div>
+                <div class="friend">Ancient</div>
+                <div class="friend">Neprix</div>
+                <div class="friend">Bren</div>
+                <div class="friend">Kyrusworld</div>
+                <div class="friend">Isb</div>
+                <div class="friend">Brenn</div>
+                <div class="friend">Trance</div>
+                <div class="friend">Kyoko/Zuly</div>
+                <div class="friend">Mar</div>
+                <div class="friend">Intrns</div>
+                <div class="friend">Movelook</div>
+            </div>
+            <p style="color: #ff6347; margin-top: 20px;">More will be added soon but for now this is half of my friends online and IRL.</p>
+        </div>
 
+        <div class="section">
+            <h2>Why I Code</h2>
+            <p>I code whenever I am bored, or I just feel like it. Coding is my way to make sure I'm never bored—if you know what I mean. Coding can be pretty easy, but it can be hard to start off with.</p>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Alex. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionPos = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionPos < windowHeight - 100) {
+                    section.classList.add('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
