@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex About me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .typing-effect {
+            font-size: 1.5em;
+            border-right: 2px solid #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+            margin-bottom: 50px;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #111;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Alex About me</h1>
+        <div class="typing-effect">Proficient in Python, JavaScript, C#, and more...</div>
+        
+        <div class="section fade-in">
+            <h2>My Coding Skills</h2>
+            <p>I have extensive experience in several programming languages, including:</p>
+            <ul>
+                <li>Python - for scripting, automation, and backend development</li>
+                <li>JavaScript - for front-end development and interactive web applications</li>
+                <li>C# - for game development and robust desktop applications</li>
+                <li>Lua - for game scripting and modifications</li>
+                <li>HTML & CSS - for creating beautiful, responsive web designs</li>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2>Why I Love Coding</h2>
+            <p>Coding is not just a profession for me; it’s a passion. I enjoy solving problems, creating solutions, and building something that can make a difference. Whether it’s a complex algorithm or a simple script, coding gives me a sense of accomplishment and joy.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alex. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionPos = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionPos < windowHeight - 50) {
+                    section.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
