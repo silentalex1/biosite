@@ -6,53 +6,54 @@
     <title>About Alex</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d0d0d;
-            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 50px auto;
-            padding: 40px 20px;
-            background: #1c1c1c;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            padding: 60px 30px;
+            background: #1e1e1e;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
             text-align: center;
+            transition: transform 0.5s ease-in-out;
         }
 
         h1 {
-            font-size: 3.2em;
-            margin-bottom: 20px;
-            color: #ff6347;
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            color: #ff6b6b;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 3px solid #ff6347;
+            letter-spacing: 3px;
+            border-bottom: 4px solid #ff6b6b;
             display: inline-block;
-            padding-bottom: 10px;
-            animation: fadeIn 1.2s ease-in-out;
+            padding-bottom: 12px;
+            animation: fadeInDown 1.5s ease-in-out;
         }
 
         .intro {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            color: #d1d1d1;
-            animation: fadeIn 1.5s ease-in-out;
+            font-size: 1.5em;
+            margin-bottom: 50px;
+            color: #bbbbbb;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .section {
-            margin-bottom: 50px;
-            padding: 30px;
-            background: #262626;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            transform: translateY(40px);
+            margin-bottom: 60px;
+            padding: 40px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            transform: translateY(50px);
             opacity: 0;
-            transition: transform 0.5s, opacity 0.5s;
+            transition: transform 0.6s ease, opacity 0.6s ease;
         }
 
         .section.active {
@@ -61,69 +62,82 @@
         }
 
         h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #ff6347;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            color: #ff6b6b;
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-bottom: 2px solid #ff6347;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #ff6b6b;
             display: inline-block;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
+            animation: fadeInUp 1.8s ease-in-out;
         }
 
         .gallery, .roles, .friends {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .gallery img {
-            width: 250px;
-            height: 160px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            width: 280px;
+            height: 180px;
+            border-radius: 12px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
             transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
         }
 
         .gallery img:hover {
-            transform: scale(1.08);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(1.1);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.6);
         }
 
         .role, .friend {
             background-color: #333;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             color: #ffffff;
-            font-size: 1.2em;
+            font-size: 1.3em;
             transition: background-color 0.4s, transform 0.4s;
         }
 
         .role:hover, .friend:hover {
-            background-color: #ff6347;
-            transform: scale(1.08);
+            background-color: #ff6b6b;
+            transform: scale(1.1);
         }
 
         footer {
             text-align: center;
-            padding: 30px 0;
-            background-color: #0b0b0b;
-            color: #bbbbbb;
-            margin-top: 50px;
-            border-top: 1px solid #333;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+            padding: 40px 0;
+            background-color: #161616;
+            color: #cccccc;
+            margin-top: 60px;
+            border-top: 1px solid #444;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease-in-out;
         }
 
         footer p {
             margin: 0;
-            font-size: 1em;
-            letter-spacing: 1.2px;
+            font-size: 1.2em;
+            letter-spacing: 1.5px;
         }
 
-        @keyframes fadeIn {
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -131,6 +145,15 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
     </style>
@@ -186,12 +209,12 @@
                 <div class="friend">Intrns</div>
                 <div class="friend">Movelook</div>
             </div>
-            <p style="color: #ff6347; margin-top: 20px;">More will be added soon but for now this is half of my friends online and IRL.</p>
+            <p style="color: #ff6b6b; margin-top: 20px;">More will be added soon but for now this is half of my friends online and IRL.</p>
         </div>
 
         <div class="section">
             <h2>Why I Code</h2>
-            <p>I code whenever I am bored, or I just feel like it. Coding is my way to make sure I'm never bored—if you know what I mean. Coding can be pretty easy, but it can be hard to start off with.</p>
+            <p>Coding is my passion, my escape, and my challenge. It keeps me engaged and always learning. Coding can be pretty easy, but it can be hard to start off with. But once you get the hang of it, the possibilities are endless.</p>
         </div>
     </div>
 
