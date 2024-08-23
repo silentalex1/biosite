@@ -7,49 +7,52 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-            color: #ffffff;
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            line-height: 1.7;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
-            text-align: center;
-            background: rgba(30, 30, 30, 0.9);
+            padding: 60px 20px;
+            background: #1f1f1f;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
+            font-size: 3.5em;
+            margin-bottom: 30px;
             color: #ff6347;
             letter-spacing: 2px;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 10px;
             animation: fadeIn 1.5s ease-in-out;
         }
 
         .intro {
-            font-size: 1.5em;
-            margin-bottom: 60px;
-            color: #e0e0e0;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            color: #cccccc;
+            text-align: center;
+            line-height: 1.6;
             animation: fadeIn 1.8s ease-in-out;
         }
 
         .section {
-            margin-bottom: 80px;
-            padding: 50px;
-            background: linear-gradient(to right, #1f1f1f, #2a2a2a);
-            border-radius: 15px;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: #2a2a2a;
+            border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            transform: translateY(50px);
             opacity: 0;
+            transform: translateY(50px);
             transition: transform 0.5s, opacity 0.5s;
         }
 
@@ -59,60 +62,56 @@
         }
 
         h2 {
-            font-size: 2.8em;
-            margin-bottom: 25px;
+            font-size: 2.2em;
+            margin-bottom: 20px;
             color: #ff6347;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border-bottom: 2px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
-        .gallery {
+        .gallery, .roles, .friends {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .gallery img {
-            width: 280px;
-            height: 200px;
+            width: 260px;
+            height: 180px;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
             transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
         }
 
         .gallery img:hover {
-            transform: scale(1.12);
+            transform: scale(1.08);
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
         }
 
-        .roles {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
         .role, .friend {
-            background-color: #3a3a3a;
-            padding: 20px 35px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #333;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             color: #ffffff;
-            font-size: 1.3em;
-            transition: background-color 0.5s, transform 0.5s;
+            font-size: 1.2em;
+            transition: background-color 0.4s, transform 0.4s;
         }
 
         .role:hover, .friend:hover {
             background-color: #ff6347;
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         footer {
             text-align: center;
             padding: 40px 0;
-            background-color: #0b0b0b;
+            background-color: #0c0c0c;
             color: #bbbbbb;
-            margin-top: 80px;
+            margin-top: 60px;
             border-top: 1px solid #333;
             box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
         }
@@ -139,7 +138,7 @@
 
     <div class="container">
         <h1>About Alex</h1>
-        <div class="intro">Innovative programmer with expertise in Python, JavaScript, C#, and more...</div>
+        <div class="intro">Creative programmer with expertise in Python, JavaScript, C#, and more. Passionate about crafting efficient and impactful solutions.</div>
         
         <div class="section">
             <h2>Past Work</h2>
@@ -171,7 +170,7 @@
 
         <div class="section">
             <h2>Here are my friends</h2>
-            <div class="roles">
+            <div class="friends">
                 <div class="friend">staray</div>
                 <div class="friend">aj</div>
                 <div class="friend">ancient</div>
@@ -191,7 +190,7 @@
 
         <div class="section">
             <h2>Why I Code</h2>
-            <p>Coding is my passion. I love solving problems and creating solutions. It's rewarding to build something impactful, whether a complex algorithm or a simple script.</p>
+            <p>Coding is not just my job, but my passion. It allows me to solve problems and build solutions that make a difference. Whether it's a complex algorithm or a simple script, I strive to create something impactful.</p>
         </div>
     </div>
 
