@@ -1,1 +1,223 @@
-being fixed.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Alex</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #101010;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #181818;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            color: #ff6347;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 4px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 10px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .intro {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            color: #d1d1d1;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #212121;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transform: translateY(40px);
+            opacity: 0;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            color: #ff6347;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 3px solid #ff6347;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .roles, .friends {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .role, .friend {
+            background-color: #333;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            font-size: 1.2em;
+            transition: background-color 0.4s, transform 0.4s;
+        }
+
+        .role:hover, .friend:hover {
+            background-color: #ff6347;
+            transform: scale(1.08);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #0b0b0b;
+            color: #bbbbbb;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+            letter-spacing: 1.2px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>About Alex</h1>
+        <div class="intro">Programmer with experience in Python, JavaScript, C#, Lua, C++, and C#. I am a 3-year coder if you didn't know.</div>
+        
+        <div class="section">
+            <h2>Past Work</h2>
+            <div class="gallery">
+                <img src="past_work1.jpg" alt="Past Work 1">
+                <img src="past_work2.jpg" alt="Past Work 2">
+                <img src="past_work3.jpg" alt="Past Work 3">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Current Work</h2>
+            <div class="gallery">
+                <img src="current_work1.jpg" alt="Current Work 1">
+                <img src="current_work2.jpg" alt="Current Work 2">
+                <img src="current_work3.jpg" alt="Current Work 3">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>I am also a dev in...</h2>
+            <div class="roles">
+                <div class="role">Wept</div>
+                <div class="role">Astra</div>
+                <div class="role">Hybrid</div>
+                <div class="role">Exploit Devs</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Here are my friends</h2>
+            <div class="friends">
+                <div class="friend">Staray</div>
+                <div class="friend">AJ</div>
+                <div class="friend">Ancient</div>
+                <div class="friend">Neprix</div>
+                <div class="friend">Bren</div>
+                <div class="friend">Kyrusworld</div>
+                <div class="friend">Isb</div>
+                <div class="friend">Brenn</div>
+                <div class="friend">Trance</div>
+                <div class="friend">Kyoko/Zuly</div>
+                <div class="friend">Mar</div>
+                <div class="friend">Intrns</div>
+                <div class="friend">Movelook</div>
+            </div>
+            <p style="color: #ff6347; margin-top: 20px;">More will be added soon but for now this is half of my friends online and IRL.</p>
+        </div>
+
+        <div class="section">
+            <h2>Why I Code</h2>
+            <p>I code whenever I am bored, or I just feel like it. Coding is my way to make sure I'm never bored—if you know what I mean. Coding can be pretty easy, but it can be hard to start off with.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alex. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionPos = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionPos < windowHeight - 100) {
+                    section.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
