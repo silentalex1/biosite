@@ -41,7 +41,6 @@
         .intro {
             font-size: 1.2em;
             margin-bottom: 40px;
-            animation: slideIn 1.5s ease-in-out;
         }
 
         .section {
@@ -50,7 +49,6 @@
             background-color: #2a2a2a;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            animation: fadeInUp 1.5s ease-in-out;
         }
 
         h2 {
@@ -77,21 +75,25 @@
             transform: scale(1.05);
         }
 
+        .roles {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .role {
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
         footer {
             text-align: center;
             padding: 20px 0;
             background-color: #111;
             color: #aaa;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
         }
     </style>
 </head>
@@ -119,6 +121,16 @@
                 <img src="current_work1.jpg" alt="Current Work 1">
                 <img src="current_work2.jpg" alt="Current Work 2">
                 <img src="current_work3.jpg" alt="Current Work 3">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>I am also a dev in...</h2>
+            <div class="roles">
+                <div class="role">Astra</div>
+                <div class="role">Hybrid</div>
+                <div class="role">Wept</div>
+                <div class="role">Exploit Devs</div>
             </div>
         </div>
 
