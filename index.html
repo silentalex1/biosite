@@ -9,7 +9,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #121212;
+            background-color: #0d0d0d;
             color: #f5f5f5;
             margin: 0;
             padding: 0;
@@ -21,22 +21,22 @@
             max-width: 1200px;
             margin: 50px auto;
             padding: 60px 30px;
-            background: linear-gradient(145deg, #1e1e1e, #232323);
-            border-radius: 18px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(145deg, #1a1a1a, #1e1e1e);
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
             text-align: center;
             transition: transform 0.5s ease-in-out;
         }
 
         h1 {
-            font-size: 3.8em;
+            font-size: 4em;
             margin-bottom: 30px;
             color: #ff6b6b;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            border-bottom: 4px solid #ff6b6b;
+            letter-spacing: 4px;
+            border-bottom: 5px solid #ff6b6b;
             display: inline-block;
-            padding-bottom: 12px;
+            padding-bottom: 14px;
             animation: fadeInDown 1.5s ease-in-out;
         }
 
@@ -44,15 +44,29 @@
             font-size: 1.5em;
             margin-bottom: 50px;
             color: #bbbbbb;
-            animation: fadeIn 2s ease-in-out;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid #ff6b6b;
+            display: inline-block;
+            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ff6b6b }
         }
 
         .section {
             margin-bottom: 60px;
-            padding: 40px;
-            background: linear-gradient(145deg, #252525, #2a2a2a);
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            background: linear-gradient(145deg, #232323, #282828);
+            border-radius: 14px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
             transform: translateY(50px);
             opacity: 0;
             transition: transform 0.6s ease, opacity 0.6s ease;
@@ -64,68 +78,68 @@
         }
 
         h2 {
-            font-size: 2.7em;
+            font-size: 2.8em;
             margin-bottom: 25px;
             color: #ff6b6b;
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 3px solid #ff6b6b;
+            letter-spacing: 3px;
+            border-bottom: 4px solid #ff6b6b;
             display: inline-block;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
             animation: fadeInUp 1.8s ease-in-out;
         }
 
         .gallery, .roles, .friends {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 35px;
             flex-wrap: wrap;
         }
 
         .gallery img {
-            width: 300px;
-            height: 180px;
-            border-radius: 14px;
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+            width: 320px;
+            height: 200px;
+            border-radius: 16px;
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.6);
             transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
         }
 
         .gallery img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.6);
+            transform: scale(1.15);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
         }
 
         .role, .friend {
             background-color: #333;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            padding: 25px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
             color: #ffffff;
-            font-size: 1.3em;
+            font-size: 1.4em;
             transition: background-color 0.4s, transform 0.4s;
         }
 
         .role:hover, .friend:hover {
             background-color: #ff6b6b;
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         footer {
             text-align: center;
-            padding: 40px 0;
-            background-color: #161616;
+            padding: 50px 0;
+            background-color: #0b0b0b;
             color: #cccccc;
-            margin-top: 60px;
+            margin-top: 70px;
             border-top: 1px solid #444;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.6);
             animation: fadeInUp 2s ease-in-out;
         }
 
         footer p {
             margin: 0;
-            font-size: 1.2em;
-            letter-spacing: 1.5px;
+            font-size: 1.3em;
+            letter-spacing: 1.7px;
         }
 
         @keyframes fadeInDown {
