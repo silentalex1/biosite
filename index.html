@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Alex</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #0d0d0d;
-            color: #f5f5f5;
+            background-color: #f4f4f9;
+            color: #333;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -17,153 +17,105 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 50px auto;
-            padding: 60px 30px;
-            background: linear-gradient(145deg, #1a1a1a, #1e1e1e);
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform 0.5s ease-in-out;
         }
 
         h1 {
-            font-size: 4em;
+            font-size: 3.5em;
             margin-bottom: 10px;
-            color: #ff7f7f;
+            color: #2c3e50;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            border-bottom: 5px solid #ff7f7f;
+            letter-spacing: 3px;
+            border-bottom: 3px solid #3498db;
             display: inline-block;
-            padding-bottom: 14px;
-            animation: fadeInDown 1.5s ease-in-out;
+            padding-bottom: 10px;
         }
 
         .intro {
-            font-size: 1.5em;
-            margin-top: 20px;
-            margin-bottom: 50px;
-            color: #bbbbbb;
-            overflow: hidden;
-            border-right: 4px solid #ff7f7f;
-            display: inline-block;
-            white-space: nowrap;
-            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #ff7f7f }
+            font-size: 1.3em;
+            margin: 20px 0;
+            color: #666;
         }
 
         .section {
-            margin-bottom: 60px;
-            padding: 50px;
-            background: linear-gradient(145deg, #232323, #282828);
-            border-radius: 14px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-            transform: translateY(50px);
-            opacity: 0;
-            transition: transform 0.6s ease, opacity 0.6s ease;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f9fafc;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .section.active {
-            opacity: 1;
-            transform: translateY(0);
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            font-size: 2.8em;
-            margin-bottom: 25px;
-            color: #ff7f7f;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
             text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border-bottom: 4px solid #ff7f7f;
-            display: inline-block;
+            letter-spacing: 2px;
             padding-bottom: 10px;
-            animation: fadeInUp 1.8s ease-in-out;
+            border-bottom: 2px solid #3498db;
         }
 
         .gallery, .roles, .friends {
             display: flex;
             justify-content: center;
-            gap: 35px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .gallery img {
-            width: 320px;
+            width: 300px;
             height: 200px;
-            border-radius: 16px;
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.6);
-            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery img:hover {
-            transform: scale(1.15);
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .role, .friend {
-            background-color: #333;
-            padding: 25px 35px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            font-size: 1.4em;
-            transition: background-color 0.4s, transform 0.4s;
+            background-color: #e0e4e8;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            color: #333;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .role:hover, .friend:hover {
-            background-color: #ff7f7f;
-            transform: scale(1.15);
+            background-color: #3498db;
+            color: #ffffff;
+            transform: scale(1.05);
         }
 
         footer {
             text-align: center;
-            padding: 50px 0;
-            background-color: #0b0b0b;
-            color: #cccccc;
-            margin-top: 70px;
-            border-top: 1px solid #444;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.6);
-            animation: fadeInUp 2s ease-in-out;
+            padding: 30px 0;
+            background-color: #2c3e50;
+            color: #ffffff;
+            margin-top: 50px;
+            border-top: 2px solid #3498db;
+            font-size: 1.1em;
         }
 
         footer p {
             margin: 0;
-            font-size: 1.3em;
-            letter-spacing: 1.7px;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            letter-spacing: 1.2px;
         }
 
         @keyframes fadeIn {
@@ -227,7 +179,7 @@
                 <div class="friend">Intrns</div>
                 <div class="friend">Movelook</div>
             </div>
-            <p style="color: #ff7f7f; margin-top: 20px;">More will be added soon but for now this is half of my friends online and IRL.</p>
+            <p style="color: #2c3e50; margin-top: 20px;">More will be added soon but for now this is half of my friends online and IRL.</p>
         </div>
 
         <div class="section">
@@ -239,19 +191,6 @@
     <footer>
         <p>&copy; 2024 Alex. All rights reserved.</p>
     </footer>
-
-    <script>
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                const sectionPos = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (sectionPos < windowHeight - 100) {
-                    section.classList.add('active');
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
