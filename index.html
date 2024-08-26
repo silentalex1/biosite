@@ -3,311 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex - About Me</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Alex's Portfolio</title>
     <style>
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #0b0b0d;
-            color: white;
-            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
         }
-
         header {
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #1f1f1f;
         }
-
-        nav {
-            display: inline-flex;
-            justify-content: center;
-            gap: 30px;
-            font-size: 1.2rem;
-            background-color: rgba(15, 15, 20, 0.9);
-            padding: 10px 30px;
-            border-radius: 30px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        nav a {
-            color: #cfcfcf;
+        header a {
+            color: #fff;
             text-decoration: none;
-            transition: color 0.3s ease;
+            margin: 0 15px;
+            font-weight: bold;
         }
-
-        nav a:hover {
-            color: #ff007f;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 150px;
-        }
-
         .hero {
-            text-align: center;
-            margin-top: 50px;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #6e00ff, #ff007f);
-            border-radius: 15px;
-            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            color: #f1f1f1;
-        }
-
-        .hero button {
-            padding: 15px 30px;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            color: white;
-            background: linear-gradient(135deg, #4a00e0, #8e2de2);
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .hero button:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, #ff007f, #6e00ff);
-        }
-
-        .section {
-            margin-top: 50px;
-            background-color: #1a1a1e;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            color: #ff007f;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #e6e6e6;
-            text-align: center;
-        }
-
-        .languages {
-            margin-top: 20px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .language {
-            background-color: #29292d;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            color: #f1f1f1;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .language:hover {
-            transform: scale(1.1);
-            background-color: #6e00ff;
-        }
-
-        .experience-section {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .experience-section div {
-            background-color: #29292d;
-            padding: 30px;
-            border-radius: 15px;
-            flex: 1;
-            max-width: 45%;
+            align-items: center;
+            height: 80vh;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .experience-section div:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .phase-section {
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-around;
-            padding: 50px;
-            background-color: #1a1a1e;
-            border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .phase-section:hover {
-            transform: scale(1.02);
-            background-color: #25252a;
-        }
-
-        .phase-section div {
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             padding: 20px;
-            border-radius: 15px;
-            background-color: #29292d;
         }
-
-        .phase-section div:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
         }
-
-        .phase-description {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: #ff007f;
-            display: none;
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
         }
-
-        .phase-section div:hover .phase-description {
-            display: block;
+        .hero button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #1f1f1f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-
-        .contact-section {
-            margin-top: 50px;
-            background-color: #1a1a1e;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        .hero button:hover {
+            background-color: #333;
         }
-
-        .contact-section h2 {
-            font-size: 2.5rem;
-            color: #ff007f;
-            margin-bottom: 20px;
+        .about {
+            padding: 40px;
+            background-color: #1f1f1f;
             text-align: center;
         }
-
-        .contact-form {
+        .about h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .about p {
+            font-size: 1em;
+            line-height: 1.5;
             max-width: 600px;
             margin: 0 auto;
         }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            color: #0b0b0d;
-        }
-
-        .contact-form button {
-            background-color: #ff007f;
-            padding: 15px;
-            border: none;
-            border-radius: 30px;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #6e00ff;
-            transform: scale(1.05);
-        }
-
     </style>
 </head>
 <body>
-
     <header>
-        <nav>
+        <div>
             <a href="#about">About</a>
-            <a href="#experience">My Experiences</a>
+            <a href="#experiences">My Experiences</a>
             <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <div class="hero">
-            <h1>Transforming Concepts into Seamless User Experiences</h1>
-            <p>Hi, I am Alex, nice to meet you.</p>
-            <button>See my work</button>
         </div>
-
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>I am a developer constantly trying to improve my skills in various programming languages. Below are the ones I am focused on:</p>
-            <div class="languages">
-                <div class="language">C+</div>
-                <div class="language">C#</div>
-                <div class="language">CP</div>
-                <div class="language">Python</div>
-            </div>
-        </section>
-
-        <section id="experience" class="experience-section section">
-            <h2>My Experiences</h2>
-            <div>
-                <h3>Reverse Engineer</h3>
-                <p>I am decent at reverse engineering but I am slowly learning it. I enjoy the challenges it presents and am committed to improving my skills.</p>
-            </div>
-            <div>
-                <h3>Website Developer</h3>
-                <p>I am an expert website developer who can make websites in under 10 minutes, but the time may vary depending on your requirements. While I’m not a pro yet, I’m getting there.</p>
-            </div>
-        </section>
-
-        <section class="phase-section">
-            <div>
-                <h3>Phase 1</h3>
-                <div class="phase-description">Discovery & Planning - We discuss your goals, target audience, and competitor landscape.</div>
-            </div>
-            <div>
-                <h3>Phase 2</h3>
-                <div class="phase-description">Design & Development - We bring your vision to life with modern designs and seamless functionality.</div>
-            </div>
-            <div>
-                <h3>Phase 3</h3>
-                <div class="phase-description">Testing & Launch - We ensure everything works perfectly before going live.</div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section section">
-            <h2>Ready to take your digital presence to the next level?</h2>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Your name..." required>
-                <input type="email" name="email" placeholder="jondoe@gmail.com" required>
-                <input type="text" name="subject" placeholder="Your subject matter..." required>
-                <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
-                <button type="submit">Send Feedback</button>
-            </form>
-        </section>
-    </div>
-
+    </header>
+    <section class="hero">
+        <h1>Transforming Concepts into Seamless User Experiences</h1>
+        <p>Hi, I am Alex, nice to meet you.</p>
+        <button>See my work</button>
+    </section>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I am a developer constantly trying to improve my skills in various programming languages. I enjoy the challenges and am committed to enhancing my expertise.</p>
+    </section>
 </body>
 </html>
