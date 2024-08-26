@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex - About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #0b0b0d;
             color: white;
             overflow-x: hidden;
         }
 
         header {
-            background-color: #141418;
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
             position: fixed;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.7);
         }
 
         nav {
@@ -36,65 +38,117 @@
         }
 
         nav a:hover {
-            color: #e600ff;
+            color: #ff007f;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding-top: 100px;
+            padding-top: 120px;
         }
 
         .hero {
             text-align: center;
             margin-top: 50px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #6e00ff, #ff007f);
+            border-radius: 15px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            background: linear-gradient(to right, #8e2de2, #4a00e0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 4rem;
+            color: white;
             margin-bottom: 20px;
         }
 
         .hero p {
             font-size: 1.5rem;
-            color: #cfcfcf;
+            color: #f1f1f1;
         }
 
-        .about-section, .experience-section {
+        .hero button {
+            padding: 15px 30px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: white;
+            background: linear-gradient(135deg, #4a00e0, #8e2de2);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .hero button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ff007f, #6e00ff);
+        }
+
+        .section {
             margin-top: 50px;
             background-color: #1a1a1e;
             padding: 50px;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         }
 
-        .about-section h2, .experience-section h2 {
+        .section h2 {
             font-size: 2.5rem;
             color: #ff007f;
             margin-bottom: 20px;
+            text-align: center;
         }
 
-        .about-section p, .experience-section p {
+        .section p {
             font-size: 1.2rem;
             line-height: 1.6;
             color: #e6e6e6;
+            text-align: center;
         }
 
         .languages {
             margin-top: 20px;
             display: flex;
-            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .language {
             background-color: #29292d;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 30px;
+            border-radius: 30px;
             font-size: 1.1rem;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .language:hover {
+            transform: scale(1.1);
+            background-color: #6e00ff;
+        }
+
+        .experience-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .experience-section div {
+            background-color: #29292d;
+            padding: 30px;
+            border-radius: 15px;
+            flex: 1;
+            max-width: 45%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-section div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .phase-section {
@@ -103,36 +157,40 @@
             justify-content: space-around;
             padding: 50px;
             background-color: #1a1a1e;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         }
 
         .phase-section div {
             text-align: center;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #29292d;
         }
 
         .phase-section div:hover {
             transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .phase-description {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #ff007f;
+            display: none;
         }
 
         .phase-section div:hover .phase-description {
             display: block;
         }
 
-        .phase-description {
-            display: none;
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: #ff007f;
-        }
-
         .contact-section {
             margin-top: 50px;
             background-color: #1a1a1e;
             padding: 50px;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         }
 
@@ -140,14 +198,20 @@
             font-size: 2.5rem;
             color: #ff007f;
             margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             margin-bottom: 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 1.1rem;
             color: #0b0b0d;
         }
@@ -156,16 +220,18 @@
             background-color: #ff007f;
             padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             color: white;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .contact-form button:hover {
-            background-color: #e600ff;
+            background-color: #6e00ff;
+            transform: scale(1.05);
         }
+
     </style>
 </head>
 <body>
@@ -182,10 +248,10 @@
         <div class="hero">
             <h1>Transforming Concepts into Seamless User Experiences</h1>
             <p>Hi, I am Alex, nice to meet you.</p>
-            <a href="#about"><button>See my work</button></a>
+            <button>See my work</button>
         </div>
 
-        <section id="about" class="about-section">
+        <section id="about" class="section">
             <h2>About Me</h2>
             <p>I am a developer constantly trying to improve my skills in various programming languages. Below are the ones I am focused on:</p>
             <div class="languages">
@@ -196,7 +262,7 @@
             </div>
         </section>
 
-        <section id="experience" class="experience-section">
+        <section id="experience" class="experience-section section">
             <h2>My Experiences</h2>
             <div>
                 <h3>Reverse Engineer</h3>
@@ -223,7 +289,7 @@
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
+        <section id="contact" class="contact-section section">
             <h2>Ready to take your digital presence to the next level?</h2>
             <form class="contact-form">
                 <input type="text" name="name" placeholder="Your name..." required>
