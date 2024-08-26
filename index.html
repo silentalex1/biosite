@@ -9,14 +9,14 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #0b0f1a;
+            background-color: #0a0c1a;
             color: #f4f4f4;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
         header {
@@ -26,14 +26,19 @@
             padding: 15px 40px;
             background-color: rgba(255, 255, 255, 0.1);
             position: fixed;
-            top: 30px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            border-radius: 10px;
+            border-radius: 50px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        header:hover {
+            transform: translateX(-50%) translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         nav ul {
@@ -41,7 +46,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 50px;
+            gap: 40px;
         }
 
         nav ul li a {
@@ -49,7 +54,7 @@
             color: #f4f4f4;
             font-size: 1.1em;
             padding: 10px 20px;
-            transition: color 0.3s;
+            transition: color 0.3s ease-in-out;
             position: relative;
         }
 
@@ -69,7 +74,7 @@
             padding: 0 20px;
             position: relative;
             z-index: 1;
-            animation: gradient 5s ease infinite;
+            animation: gradient 8s ease infinite;
             background-size: 400% 400%;
         }
 
@@ -125,11 +130,12 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
         }
 
         .section:hover {
             transform: translateY(-10px);
+            background-color: #1d2330;
         }
 
         .section::before {
@@ -142,7 +148,7 @@
             background: linear-gradient(90deg, #f9004d, #ff1e56);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease-in-out;
         }
 
         .section:hover::before {
@@ -164,7 +170,7 @@
         }
 
         footer {
-            background-color: #0b0f1a;
+            background-color: #0a0c1a;
             color: #8b949e;
             text-align: center;
             padding: 25px 0;
