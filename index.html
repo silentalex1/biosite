@@ -9,31 +9,30 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #0a0c1a;
-            color: #f4f4f4;
+            background-color: #0d0d0d;
+            color: #e4e4e4;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
         header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px 40px;
+            background-color: #1a1a1a;
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
         }
 
         header:hover {
@@ -46,24 +45,24 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 40px;
+            gap: 50px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #f4f4f4;
+            color: #e4e4e4;
             font-size: 1.1em;
             padding: 10px 20px;
-            transition: color 0.3s ease-in-out;
             position: relative;
+            transition: color 0.3s ease-in-out;
         }
 
         nav ul li a:hover {
-            color: #58a6ff;
+            color: #ff4d4d;
         }
 
         .hero {
-            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,70,253,1) 50%, rgba(252,70,107,1) 100%);
+            background: radial-gradient(circle, #1a001a 0%, #330033 50%, #660033 100%);
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -74,7 +73,7 @@
             padding: 0 20px;
             position: relative;
             z-index: 1;
-            animation: gradient 8s ease infinite;
+            animation: gradient 10s ease infinite;
             background-size: 400% 400%;
         }
 
@@ -85,22 +84,22 @@
         }
 
         .hero h2 {
-            font-size: 4em;
+            font-size: 4.5em;
             margin-bottom: 20px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
             animation: fadeInUp 1s ease-in-out;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
         .hero p {
             font-size: 1.5em;
             margin-bottom: 30px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
             animation: fadeInUp 1.5s ease-in-out;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
         .hero a {
             display: inline-block;
-            background-color: #f9004d;
+            background-color: #ff4d4d;
             color: #fff;
             padding: 15px 50px;
             font-size: 1.2em;
@@ -108,7 +107,7 @@
             text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
             animation: fadeInUp 2s ease-in-out;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
         }
 
         .hero a:hover {
@@ -118,16 +117,16 @@
 
         .container {
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 80px auto;
             padding: 0 20px;
         }
 
         .section {
-            margin: 60px 0;
-            padding: 50px;
-            background-color: #161b22;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin: 80px 0;
+            padding: 60px;
+            background-color: #1a1a1a;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -135,7 +134,7 @@
 
         .section:hover {
             transform: translateY(-10px);
-            background-color: #1d2330;
+            background-color: #330033;
         }
 
         .section::before {
@@ -145,7 +144,7 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, #f9004d, #ff1e56);
+            background: linear-gradient(90deg, #ff4d4d, #ff6666);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.5s ease-in-out;
@@ -156,31 +155,31 @@
         }
 
         .section h2 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 30px;
             text-align: center;
-            color: #58a6ff;
+            color: #ff4d4d;
         }
 
         .section p {
             text-align: justify;
-            font-size: 1.2em;
+            font-size: 1.3em;
             line-height: 1.8;
-            color: #a5a9b4;
+            color: #c0c0c0;
         }
 
         footer {
-            background-color: #0a0c1a;
-            color: #8b949e;
+            background-color: #0d0d0d;
+            color: #c0c0c0;
             text-align: center;
-            padding: 25px 0;
-            margin-top: 60px;
-            box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.5);
+            padding: 30px 0;
+            margin-top: 80px;
+            box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.8);
         }
 
         footer p {
             margin: 0;
-            font-size: 1em;
+            font-size: 1.2em;
         }
 
         @keyframes fadeInUp {
