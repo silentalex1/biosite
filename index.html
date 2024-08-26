@@ -3,169 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Bio</title>
+    <title>Wept.Reaper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            background-image: radial-gradient(circle, rgba(20, 20, 20, 0.8), #0d0d0d);
+            color: #ffffff;
             overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background-color: transparent;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 40px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #c9d1d9;
-            font-size: 1em;
-            padding: 10px 20px;
-            transition: background-color 0.3s, color 0.3s;
-            border-radius: 5px;
-            position: relative;
-        }
-
-        nav ul li a:hover {
-            color: #fff;
-        }
-
-        .hero {
-            background-image: linear-gradient(to right, #141e30, #243b55);
-            color: #fff;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            transition: background 0.5s ease;
+        }
+
+        .navbar {
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(20, 20, 20, 0.95);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar h1 {
+            font-size: 32px;
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .navbar .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-buttons a {
+            color: #e5e5e5;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar .nav-buttons a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .main-content {
+            display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero h2 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            animation: fadeInUp 1s ease-in-out;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            animation: fadeInUp 1.5s ease-in-out;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero a {
-            display: inline-block;
-            background-color: #58a6ff;
-            color: #fff;
-            padding: 15px 40px;
-            font-size: 1.2em;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-            animation: fadeInUp 2s ease-in-out;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero a:hover {
-            background-color: #1f6feb;
-            transform: translateY(-5px);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            margin: 50px 0;
-            padding: 40px;
-            background-color: #161b22;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section:hover {
-            transform: translateY(-10px);
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+            padding-top: 100px;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #58a6ff, #1f6feb);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
+            max-width: 800px;
+            margin-top: 100px;
         }
 
-        .section:hover::before {
-            transform: scaleX(1);
-        }
-
-        .section h2 {
-            font-size: 2.5em;
-            margin-bottom: 25px;
+        .keyauth-box {
+            background: rgba(15, 15, 15, 0.95);
+            padding: 60px 50px;
+            border-radius: 20px;
             text-align: center;
-            color: #58a6ff;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 500px;
         }
 
-        .section p {
-            text-align: justify;
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #8b949e;
+        .keyauth-box input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background: #1e1e1e;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 18px;
+            transition: background 0.3s ease;
+            outline: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
 
-        footer {
-            background-color: #161b22;
-            color: #8b949e;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+        .keyauth-box input:focus {
+            background: #292929;
+            box-shadow: 0 4px 20px rgba(128, 0, 128, 0.6);
         }
 
-        footer p {
-            margin: 0;
-            font-size: 1em;
+        .keyauth-box button {
+            padding: 15px 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #800080, #9b30ff);
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 6px 20px rgba(128, 0, 128, 0.6);
         }
 
-        @keyframes fadeInUp {
+        .keyauth-box button:hover {
+            background: linear-gradient(135deg, #9b30ff, #ff8e00);
+            transform: scale(1.1);
+        }
+
+        /* Add animations */
+        .keyauth-box, .navbar {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -175,78 +153,55 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            header {
-                padding: 10px;
-            }
-
-            nav ul {
+            .navbar {
                 flex-direction: column;
-                align-items: center;
-                width: 100%;
+                padding: 15px;
+            }
+
+            .navbar .nav-buttons {
+                flex-direction: column;
                 gap: 10px;
+                margin-top: 10px;
             }
 
-            .hero h2 {
-                font-size: 2.5em;
+            .keyauth-box {
+                padding: 40px 30px;
             }
 
-            .hero p {
-                font-size: 1.3em;
-            }
-
-            .hero a {
-                font-size: 1em;
-                padding: 10px 30px;
-            }
-
-            .section h2 {
-                font-size: 2em;
-            }
-
-            .section p {
-                font-size: 1.1em;
+            .keyauth-box input, .keyauth-box button {
+                font-size: 16px;
             }
         }
-
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h2>Transforming Concepts into Seamless User Experiences</h2>
-        <p>Hi, I'm Alex. Nice to meet you.</p>
-        <a href="#projects">See my work</a>
-    </section>
-
-    <div class="container">
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>Example Text Here</p>
-        </section>
-
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <p>Example Text Here</p>
-        </section>
-
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Example Text Here</p>
-        </section>
+    <div class="navbar">
+        <h1><a href="#">wept.reaper</a></h1>
+        <div class="nav-buttons">
+            <a href="faq.html">FAQ</a>
+            <a href="products.html">Products</a>
+            <a href="https://discord.gg/yourserverlink">Discord Invite</a>
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Alex Bio. All Rights Reserved.</p>
-    </footer>
+    <div class="main-content">
+        <div class="keyauth-box">
+            <input type="text" placeholder="Enter a wept.reaper key.." id="key-input">
+            <br>
+            <button onclick="verifyKey()">Submit</button>
+        </div>
+    </div>
 
+    <script>
+        function verifyKey() {
+            var key = document.getElementById("key-input").value;
+            if (key === "validKey") {
+                window.location.href = "weptreaper.vip/download.html";
+            } else {
+                alert("Invalid Key. Please try again.");
+            }
+        }
+    </script>
 </body>
 </html>
