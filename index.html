@@ -3,280 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Bio</title>
+    <title>Alex - About Me</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0b0b0d;
-            color: #eaeaea;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+            background-color: #0b0b0d;
+            color: white;
             overflow-x: hidden;
-            scroll-behavior: smooth;
-            transition: all 0.5s ease;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #141418;
+            padding: 20px;
+            text-align: center;
             position: fixed;
             width: 100%;
-            top: 0;
             z-index: 1000;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease-in-out;
         }
 
-        header.scrolled {
-            padding: 10px 40px;
-            background-color: rgba(0, 0, 0, 0.95);
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        nav {
             display: flex;
-            gap: 40px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #eaeaea;
-            font-size: 1em;
-            font-weight: 600;
-            padding: 10px 15px;
-            transition: color 0.3s ease-in-out;
-            position: relative;
-        }
-
-        nav ul li a:hover {
-            color: #ff4d6d;
-        }
-
-        .hero {
-            background: linear-gradient(160deg, #1d001d 0%, #330033 50%, #55002e 100%);
-            color: #fff;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-            animation: backgroundAnimation 10s ease infinite;
-            background-size: 200% 200%;
+            gap: 30px;
+            font-size: 1.2rem;
         }
 
-        @keyframes backgroundAnimation {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        .hero h2 {
-            font-size: 4.5em;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-in-out;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            animation: fadeInUp 1.5s ease-in-out;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero a {
-            display: inline-block;
-            background-color: #ff4d6d;
-            color: #fff;
-            padding: 15px 50px;
-            font-size: 1.2em;
-            border-radius: 50px;
+        nav a {
+            color: #cfcfcf;
             text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-            animation: fadeInUp 2s ease-in-out;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            transition: color 0.3s ease;
         }
 
-        .hero a:hover {
-            background-color: #d13a5b;
-            transform: translateY(-5px);
+        nav a:hover {
+            color: #e600ff;
         }
 
         .container {
             max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding-top: 100px;
         }
 
-        .section {
-            margin: 80px 0;
-            padding: 60px;
-            background-color: #141418;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        .hero {
+            text-align: center;
+            margin-top: 50px;
         }
 
-        .section:hover {
-            transform: translateY(-10px);
-            background-color: #2a002d;
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
 
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .hero p {
+            font-size: 1.5rem;
+            color: #cfcfcf;
+        }
+
+        .about-section, .experience-section {
+            margin-top: 50px;
+            background-color: #1a1a1e;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-section h2, .experience-section h2 {
+            font-size: 2.5rem;
+            color: #ff007f;
+            margin-bottom: 20px;
+        }
+
+        .about-section p, .experience-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e6e6e6;
+        }
+
+        .languages {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .language {
+            background-color: #29292d;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        .phase-section {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            background-color: #1a1a1e;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .phase-section div {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .phase-section div:hover {
+            transform: scale(1.1);
+        }
+
+        .phase-section div:hover .phase-description {
+            display: block;
+        }
+
+        .phase-description {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #ff007f;
+        }
+
+        .contact-section {
+            margin-top: 50px;
+            background-color: #1a1a1e;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            color: #ff007f;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
             width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #ff4d6d, #ff7091);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease-in-out;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            color: #0b0b0d;
         }
 
-        .section:hover::before {
-            transform: scaleX(1);
+        .contact-form button {
+            background-color: #ff007f;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .section h2 {
-            font-size: 3.5em;
-            margin-bottom: 30px;
-            text-align: center;
-            color: #ff4d6d;
+        .contact-form button:hover {
+            background-color: #e600ff;
         }
-
-        .section p {
-            text-align: justify;
-            font-size: 1.3em;
-            line-height: 1.8;
-            color: #d4d4d4;
-        }
-
-        footer {
-            background-color: #0b0b0d;
-            color: #d4d4d4;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 80px;
-            box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.8);
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1.2em;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 10px 20px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                gap: 15px;
-            }
-
-            .hero h2 {
-                font-size: 2.8em;
-            }
-
-            .hero p {
-                font-size: 1.2em;
-            }
-
-            .hero a {
-                font-size: 1em;
-                padding: 10px 30px;
-            }
-
-            .section h2 {
-                font-size: 2.5em;
-            }
-
-            .section p {
-                font-size: 1.1em;
-            }
-        }
-
     </style>
 </head>
 <body>
-    <header id="header">
+
+    <header>
         <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a href="#about">About</a>
+            <a href="#experience">My Experiences</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h2>Transforming Concepts into Seamless User Experiences</h2>
-        <p>Hi, I'm Alex. Nice to meet you.</p>
-        <a href="#projects">See my work</a>
-    </section>
-
     <div class="container">
-        <section id="about" class="section">
+        <div class="hero">
+            <h1>Transforming Concepts into Seamless User Experiences</h1>
+            <p>Hi, I am Alex, nice to meet you.</p>
+            <a href="#about"><button>See my work</button></a>
+        </div>
+
+        <section id="about" class="about-section">
             <h2>About Me</h2>
-            <p>Example Text Here</p>
+            <p>I am a developer constantly trying to improve my skills in various programming languages. Below are the ones I am focused on:</p>
+            <div class="languages">
+                <div class="language">C+</div>
+                <div class="language">C#</div>
+                <div class="language">CP</div>
+                <div class="language">Python</div>
+            </div>
         </section>
 
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <p>Example Text Here</p>
+        <section id="experience" class="experience-section">
+            <h2>My Experiences</h2>
+            <div>
+                <h3>Reverse Engineer</h3>
+                <p>I am decent at reverse engineering but I am slowly learning it. I enjoy the challenges it presents and am committed to improving my skills.</p>
+            </div>
+            <div>
+                <h3>Website Developer</h3>
+                <p>I am an expert website developer who can make websites in under 10 minutes, but the time may vary depending on your requirements. While I’m not a pro yet, I’m getting there.</p>
+            </div>
         </section>
 
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Example Text Here</p>
+        <section class="phase-section">
+            <div>
+                <h3>Phase 1</h3>
+                <div class="phase-description">Discovery & Planning - We discuss your goals, target audience, and competitor landscape.</div>
+            </div>
+            <div>
+                <h3>Phase 2</h3>
+                <div class="phase-description">Design & Development - We bring your vision to life with modern designs and seamless functionality.</div>
+            </div>
+            <div>
+                <h3>Phase 3</h3>
+                <div class="phase-description">Testing & Launch - We ensure everything works perfectly before going live.</div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Ready to take your digital presence to the next level?</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Your name..." required>
+                <input type="email" name="email" placeholder="jondoe@gmail.com" required>
+                <input type="text" name="subject" placeholder="Your subject matter..." required>
+                <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+                <button type="submit">Send Feedback</button>
+            </form>
         </section>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Alex Bio. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        const header = document.getElementById('header');
-        window.onscroll = function() {
-            if (window.pageYOffset > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        };
-    </script>
 </body>
 </html>
