@@ -1,1 +1,499 @@
-website still being made.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Bio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            z-index: -1;
+        }
+
+        .background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: #2a2a2a;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+            z-index: -1;
+        }
+
+        .background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            clip-path: circle(25% at 20% 30%);
+            z-index: -2;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 25px;
+            background-color: #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px 18px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+
+        .navbar a:hover {
+            color: #ffffff;
+            background-color: #666;
+            border-radius: 5px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: calc(100vh - 150px);
+            text-align: left;
+            font-size: 17px;
+            font-weight: normal;
+            color: #e0e0e0;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 35px;
+            border-radius: 12px;
+            margin: 120px auto;
+            max-width: 900px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+            width: 90%;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            letter-spacing: 0.4px;
+        }
+
+        .content p span {
+            color: #ff4747;
+            font-weight: 600;
+        }
+
+        .projects-gallery,
+        .friends-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            width: 100%;
+        }
+
+        .project-item,
+        .friend-item {
+            width: 100%;
+            max-width: 450px;
+            background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .project-item img,
+        .friend-item img,
+        .clown-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover,
+        .friend-item:hover,
+        .clown-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .friend-item p {
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            color: #fff;
+            word-wrap: break-word;
+            hyphens: auto;
+            margin: 0;
+        }
+
+        .clowns-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .clown-item {
+            width: calc(50% - 20px);
+            max-width: 250px;
+            background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .line-connector {
+            position: absolute;
+            width: 2px;
+            height: calc(100% - 60px);
+            background-color: #ff4747;
+            left: 50%;
+            top: 0;
+            z-index: -1;
+            animation: lineGrow 1s ease-out forwards;
+            transform: translateX(-50%);
+        }
+
+        .line-connector::before,
+        .line-connector::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ff4747;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .line-connector::before {
+            top: 0;
+        }
+
+        .line-connector::after {
+            bottom: 0;
+        }
+
+        @keyframes lineGrow {
+            from {
+                height: 0;
+            }
+            to {
+                height: 100%;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .modal-content p {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff4747;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff4747;
+            border-radius: 5px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff6363;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 8px 15px;
+            }
+
+            .navbar a {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 20px;
+                margin: 80px auto;
+            }
+
+            .friend-item p,
+            .modal-content p {
+                font-size: 16px;
+            }
+
+            .modal-content h2 {
+                font-size: 20px;
+            }
+
+            .clown-item {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#projects">My Projects</a>
+        <a href="#friends">My Friends</a>
+        <a href="#clowns">Clowns</a>
+        <a id="changelogBtn">Changelog</a>
+    </div>
+
+    <div class="content" id="about">
+        <p>Hello, my name is <span>Alex</span>. I am <span>16 years old</span> and I know <span>Java, CSS, C++, C#, Python, and Lua</span>. I like to eat <span>hot foods</span>, like <span>Takis, Dynomites,</span> and more hot chips and hot soups. I don't really do much sports anymore, but I used to play <span>basketball for 2 years, soccer for 3-4 years, baseball for 1 year,</span> and <span>tennis</span> for a few weeks before I quit because I wasn't really good at it. My favorite color is <span>blue</span>, and if you don't know, my height is <span>5'6 and a half</span>. I think I might be cooked for the height at the age of 16, but it's whatever. Now you know a little bit of information about me.</p>
+    </div>
+
+    <div class="content" id="projects">
+        <div class="projects-gallery">
+            <div class="line-connector"></div>
+
+            <div class="project-item">
+                <a href="link-to-project1.html" target="_blank">
+                    <img src="project1-thumbnail.jpg" alt="Project 1 Thumbnail">
+                    <p>Project 1</p>
+                </a>
+            </div>
+
+            <div class="project-item">
+                <a href="link-to-project2.html" target="_blank">
+                    <img src="project2-thumbnail.jpg" alt="Project 2 Thumbnail">
+                    <p>Project 2</p>
+                </a>
+            </div>
+
+            <div class="project-item">
+                <a href="link-to-project3.html" target="_blank">
+                    <img src="project3-thumbnail.jpg" alt="Project 3 Thumbnail">
+                    <p>Project 3</p>
+                </a>
+            </div>
+
+            <div class="project-item">
+                <a href="link-to-project4.html" target="_blank">
+                    <img src="project4-thumbnail.jpg" alt="Project 4 Thumbnail">
+                    <p>Project 4</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="friends">
+        <div class="friends-list">
+            <div class="line-connector"></div>
+
+            <div class="friend-item">
+                <p>Star</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Snow</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Woke</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Yisus</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Bren</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Scynthe</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Wraith</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Milo</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Isb</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Kyursworld</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Arrow</p>
+            </div>
+
+            <div class="friend-item">
+                <p>Nep</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="clowns">
+        <h2>Clowns</h2>
+        <div class="clowns-gallery">
+            <div class="clown-item">
+                <img src="clown1.jpg" alt="Clown 1">
+            </div>
+            <div class="clown-item">
+                <img src="clown2.jpg" alt="Clown 2">
+            </div>
+            <div class="clown-item">
+                <img src="clown3.jpg" alt="Clown 3">
+            </div>
+        </div>
+    </div>
+
+    <div id="changelogModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Changelog</h2>
+            <p>Version 1.0 - Initial Release</p>
+            <p>Version 1.1 - Added new features</p>
+            <p>Version 1.2 - Improved UI and user experience</p>
+            <p>Version 1.3 - Added Clowns and Changelog sections</p>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("changelogModal");
+        var btn = document.getElementById("changelogBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "flex";
+            event.preventDefault();
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
