@@ -1,491 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Bio</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zal Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #1a2a3a;
+      --secondary-color: #2c3e50;
+      --accent-color: #3498db;
+      --text-color: #ecf0f1;
+      --hover-color: #2980b9;
+      --window-bg: rgba(44, 62, 80, 0.9);
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #f5f5f5;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            line-height: 1.6;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #191919, #121212);
-            z-index: -1;
-        }
+    body {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      font-family: 'Raleway', sans-serif;
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
 
-        .background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            background: #191919;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-            z-index: -1;
-        }
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
 
-        .background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            clip-path: circle(25% at 20% 30%);
-            z-index: -2;
-        }
+    #welcome-text {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(45deg, var(--accent-color), var(--hover-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 14px 30px;
-            background-color: #292929;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            flex-wrap: wrap;
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 12px 20px;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            margin: 0 10px;
-            border-radius: 8px;
-        }
+    #button-container {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
 
-        .navbar a:hover {
-            color: #292929;
-            background-color: #f5f5f5;
-        }
+    button {
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      border: none;
+      border-radius: 25px;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: calc(100vh - 150px);
-            text-align: left;
-            font-size: 18px;
-            font-weight: normal;
-            color: #f5f5f5;
-            background: rgba(0, 0, 0, 0.75);
-            padding: 40px;
-            border-radius: 15px;
-            margin: 140px auto;
-            max-width: 900px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
-            width: 90%;
-        }
+    button:hover {
+      background-color: var(--hover-color);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .content p {
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
+    #timer-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-        .content p span {
-            color: #ff6b6b;
-            font-weight: 600;
-        }
+    .timer {
+      background-color: var(--window-bg);
+      color: var(--text-color);
+      border-radius: 15px;
+      padding: 1rem 2rem;
+      font-size: 2.5rem;
+      display: inline-block;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
 
-        .projects-gallery,
-        .friends-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 35px;
-            position: relative;
-            width: 100%;
-        }
+    .timer:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    }
 
-        .project-item,
-        .friend-item {
-            width: 100%;
-            max-width: 450px;
-            background: linear-gradient(135deg, #292929, #1b1b1b);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+    .time-period {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-        .project-item img,
-        .friend-item img,
-        .clown-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+    #date-display {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background-color: var(--window-bg);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .project-item:hover,
-        .friend-item:hover,
-        .clown-item:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
-        }
+    .window {
+      position: absolute;
+      width: 300px;
+      background: var(--window-bg);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: move;
+    }
 
-        .project-item p,
-        .friend-item p {
-            padding: 15px;
-            font-size: 18px;
-            text-align: center;
-            color: #ffffff;
-            word-wrap: break-word;
-            hyphens: auto;
-            margin: 0;
-        }
+    .window:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
 
-        .clowns-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
-            margin-top: 35px;
-            width: 100%;
-        }
+    .window-titlebar {
+      background: var(--accent-color);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .clown-item {
-            width: calc(50% - 25px);
-            max-width: 270px;
-            background: linear-gradient(135deg, #292929, #1b1b1b);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-            position: relative;
-            margin-bottom: 25px;
-        }
+    .window-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
 
-        .line-connector {
-            position: absolute;
-            width: 2px;
-            height: calc(100% - 70px);
-            background-color: #ff6b6b;
-            left: 50%;
-            top: 0;
-            z-index: -1;
-            animation: lineGrow 1s ease-out forwards;
-            transform: translateX(-50%);
-        }
+    .close-btn {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
 
-        .line-connector::before,
-        .line-connector::after {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ff6b6b;
-            border-radius: 50%;
-            transform: translateX(-50%);
-        }
+    .close-btn:hover {
+      color: #e74c3c;
+      transform: scale(1.1);
+    }
 
-        .line-connector::before {
-            top: 0;
-        }
+    .window-content {
+      padding: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
 
-        .line-connector::after {
-            bottom: 0;
-        }
+    @media (max-width: 768px) {
+      #welcome-text {
+        font-size: 3rem;
+      }
 
-        @keyframes lineGrow {
-            from {
-                height: 0;
-            }
-            to {
-                height: 100%;
-            }
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .modal-content {
-            background-color: #333;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-            width: 100%;
-            max-width: 550px;
-            position: relative;
-            text-align: center;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .modal-content h2 {
-            margin-top: 0;
-            color: #ffffff;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        .modal-content p {
-            color: #ffffff;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .close {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #ff6b6b;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #ff6b6b;
-            border-radius: 5px;
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff8585;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 10px 20px;
-            }
-
-            .navbar a {
-                margin: 6px 0;
-                font-size: 15px;
-            }
-
-            .content {
-                padding: 25px;
-                margin: 90px auto;
-            }
-
-            .friend-item p,
-            .modal-content p {
-                font-size: 16px;
-            }
-
-            .modal-content h2 {
-                font-size: 22px;
-            }
-
-            .clown-item {
-                width: calc(100% - 25px);
-            }
-        }
-    </style>
+      .timer {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="background"></div>
+  <main>
+    <h1 id="welcome-text">Welcome to my portfolio</h1>
 
-    <div class="navbar">
-        <a href="#about">About Me</a>
-        <a href="#projects">My Projects</a>
-        <a href="#friends">My Friends</a>
-        <a href="#clowns">Clowns</a>
-        <a id="changelogBtn">Changelog</a>
+    <div id="button-container">
+      <button onclick="openWindow('About Me')">About Me</button>
+      <button onclick="openWindow('My Interests')">My Interests</button>
+      <button onclick="openWindow('My Friends')">My Friends</button>
     </div>
 
-    <div class="content" id="about">
-        <p>Hello, my name is <span>Alex</span>. I am <span>16 years old</span> and I know <span>Java, CSS, C++, C#, Python, and Lua</span>. I like to eat <span>hot foods</span>, like <span>Takis, Dynimates,</span> and more hot chips and hot soups. I don't really do much sports anymore, but I used to play <span>basketball for 2 years, soccer for 3-4 years, baseball for 1 year,</span> and <span>tennis</span> for a few weeks before I quit because I wasn't really good at it. My favorite color is <span>blue</span>, and if you don't know, my height is <span>5'6 and a half</span>. I think I might be cooked for the height at the age of 16, but it's whatever. Now you know a little bit of information about me.</p>
+    <div id="timer-container">
+      <div class="timer" id="timer"></div>
     </div>
+  </main>
 
-    <div class="content" id="projects">
-        <div class="projects-gallery">
-            <div class="line-connector"></div>
+  <div id="date-display"></div>
 
-            <div class="project-item">
-                <img src="webproject1.png" alt="Project 1 Thumbnail">
-                <p>Project 1</p>
-            </div>
+  <script>
+    function updateTimer() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+      const [time, period] = timeString.split(' ');
+      document.getElementById('timer').innerHTML = `
+        ${time}
+        <div class="time-period">${period}</div>
+      `;
+    }
 
-            <div class="project-item">
-                <img src="webproject2.png" alt="Project 2 Thumbnail">
-                <p>Project 2</p>
-            </div>
+    function updateDate() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('date-display').innerText = now.toLocaleDateString('en-US', options);
+    }
 
-            <div class="project-item">
-                <img src="webproject3.png" alt="Project 3 Thumbnail">
-                <p>Project 3</p>
-            </div>
+    setInterval(updateTimer, 1000);
+    setInterval(updateDate, 60000);
+    updateTimer();
+    updateDate();
 
-            <div class="project-item">
-                <img src="webproject4.png" alt="Project 4 Thumbnail">
-                <p>Project 4</p>
-            </div>
+    function openWindow(title) {
+      let windowContent;
+
+      if (title === 'About Me') {
+        windowContent = "HI nice to meet you, if you are reading this I am 16 years old, i have brown hair, and i am 5'6 in a half, i love hot food, and i love to code when i am bored, if you wanna talk to me go ahead and do as you please.";
+      } else if (title === 'My Interests') {
+        windowContent = "my interest is coding, running, playing basketball, going to the gym, excerise, and sleep.";
+      } else if (title === 'My Friends') {
+        windowContent = "Star, Snow, Nep, Milo, Sai, Yisus, Bren, Ahmed";
+      }
+
+      const windowContainer = document.createElement('div');
+      windowContainer.className = 'window';
+      windowContainer.style.top = `${150 + Math.random() * 100}px`;
+      windowContainer.style.left = `${100 + Math.random() * 100}px`;
+
+      windowContainer.innerHTML = `
+        <div class="window-titlebar">
+          <div class="window-title">${title}</div>
+          <div class="close-btn" onclick="this.closest('.window').remove()">×</div>
         </div>
-    </div>
+        <div class="window-content">${windowContent}</div>
+      `;
 
-    <div class="content" id="friends">
-        <div class="friends-list">
-            <div class="line-connector"></div>
+      document.body.appendChild(windowContainer);
+      makeDraggable(windowContainer);
+    }
 
-            <div class="friend-item">
-                <p>Star</p>
-            </div>
+    function makeDraggable(element) {
+      let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      element.onmousedown = dragMouseDown;
 
-            <div class="friend-item">
-                <p>Snow</p>
-            </div>
+      function dragMouseDown(e) {
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+      }
 
-            <div class="friend-item">
-                <p>Woke</p>
-            </div>
+      function elementDrag(e) {
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+      }
 
-            <div class="friend-item">
-                <p>Yisus</p>
-            </div>
-
-            <div class="friend-item">
-                <p>Bren</p>
-            </div>
-
-            <div class="friend-item">
-                <p>Ahmed</p>
-            </div>
-
-            <div class="friend-item">
-                <p>Wraith</p>
-            </div>
-
-            <div class="friend-item">
-                <p>Milo</p>
-            </div>
-
-            <div class="friend-item">
-                <p>Isb</p>
-            </div>
-
-            <div class="friend-item">
-                <p>Kyursworld</p>
-            </div>
-
-            <div class="friend-item">
-                <p>Nep</p>
-            </div>
-
-            <div class="friend-item">
-                <p>Arrow</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="content" id="clowns">
-        <h2>Clowns</h2>
-        <div class="clowns-gallery">
-            <div class="clown-item">
-                <img src="clown1.jpg" alt="Clown 1">
-            </div>
-            <div class="clown-item">
-                <img src="clown2.jpg" alt="Clown 2">
-            </div>
-            <div class="clown-item">
-                <img src="clown3.jpg" alt="Clown 3">
-            </div>
-        </div>
-    </div>
-
-    <div id="changelogModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Changelog</h2>
-            <p>Version 1.0 - Initial Release</p>
-            <p>Version 1.1 - Added new features</p>
-            <p>Version 1.2 - Improved UI and user experience</p>
-            <p>Version 1.3 - Added Clowns and Changelog sections</p>
-        </div>
-    </div>
-
-    <script>
-        var modal = document.getElementById("changelogModal");
-        var btn = document.getElementById("changelogBtn");
-        var span = document.getElementsByClassName("close")[0];
-
-        btn.onclick = function() {
-            modal.style.display = "flex";
-            event.preventDefault();
-        }
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+      function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  </script>
 </body>
 </html>
